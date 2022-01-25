@@ -5,8 +5,11 @@ vim.o.undolevels = 1000
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- Change working directory to open buffer
+vim.o.autochdir = true
+
 -- remove search result highlight with <esc><esc>
-vim.api.nvim_set_keymap('n', '<esc><esc>', ':silent! nohls<cr>', {noremap = true})
+-- vim.api.nvim_set_keymap('n', '<esc><esc>', ':silent! nohls<cr>', {noremap = true})
 
 -- enable mouse interactions
 vim.o.mouse = 'a'
@@ -44,6 +47,17 @@ vim.o.linespace = 2
 -- enable auto pairs
 require('mini.pairs').setup()
 
+-- starter page
+require('mini.starter').setup()
+
+-- comments
+require('mini.comment').setup({
+	mappings = { comment = 'cc', comment_line = 'cc' }
+})
+
+-- completion
+require('mini.completion').setup({})
+
 -- python executable
 vim.g.python3_host_prog = '/usr/bin/python'
 
@@ -53,3 +67,6 @@ vim.api.nvim_command('autocmd BufReadPost * silent! normal! g`"zv')
 -- remove trailing whitespaces on write
 vim.api.nvim_command('autocmd BufWritePre * %s/\\s\\+$//e')
 
+-- persistent undo
+vim.o.undofile = true
+vim.o.undodir = '/home/gg/.config/nvim/undodir'

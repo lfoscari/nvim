@@ -5,26 +5,31 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 require('paq') {
-	-- lightline
-	'itchyny/lightline.vim';
-
 	-- colorscheme
 	'haishanh/night-owl.vim';
+	-- '1612492/github.vim';
+	-- 'embark-theme/vim';
 
 	-- line numbers
-	'jeffkreeftmeijer/vim-numbertoggle';
+	-- 'jeffkreeftmeijer/vim-numbertoggle';
 
 	-- code autoformatting
-	'Chiel92/vim-autoformat';
+	-- 'Chiel92/vim-autoformat';
 
-	-- auto pairs
+	-- collection of lua modules
 	'echasnovski/mini.nvim';
 
+	-- goyo
+	'junegunn/goyo.vim';
+
 	-- LSP
-	'neovim/nvim-lspconfig';
+	-- 'neovim/nvim-lspconfig';
 
 	-- autocompletion
-	{'ms-jpq/coq_nvim', branch='coq'};
-	{'ms-jpq/coq.artifacts', branch='artifacts'};
+	-- {'ms-jpq/coq_nvim', branch='coq'};
+	-- {'ms-jpq/coq.artifacts', branch='artifacts'};
+
+	-- smooth scroll
+	'psliwka/vim-smoothie';
 }
 
